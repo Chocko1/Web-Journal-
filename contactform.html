@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('https://source.unsplash.com/5FHv5nS7yGg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      color: #ffcc00; /* Yellow text color */
+      overflow-x: hidden; /* Ensure horizontal scrollbar is visible if needed */
+      position: relative; /* Ensure correct positioning for absolute elements */
+    }
+
+    header, footer {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: auto; /* Allow content to scroll if it exceeds the viewport height */
+    }
+
+    section {
+      max-width: 500px; /* Increased container width by 25% */
+      padding: 20px;
+      margin: 10px;
+      background: rgba(0, 0, 0, 0.61); /* Decreased background opacity by 39% */
+      border-radius: 10px; /* Add rounded corners to sections */
+    }
+
+    h2 {
+      color: #ffcc00; /* Yellow text color for headers */
+    }
+
+    /* Additional styles for better readability */
+    p {
+      line-height: 1.6;
+    }
+
+    /* Apply yellow color to all links */
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    /* Apply yellow color to links on hover */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Set form field label color */
+    label {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    /* Style form fields */
+    .form-label {
+      text-decoration: underline;
+    }
+
+    /* Style form inputs */
+    .form-control {
+      border-radius: 0; /* Remove border radius */
+      border: none; /* Remove default border */
+      border-bottom: 1px solid #ffcc00; /* Add underline */
+      background-color: transparent; /* Transparent background */
+      color: #ffcc00; /* Text color */
+    }
+
+    /* Style form submit button */
+    .btn-primary {
+      background-color: #ffcc00; /* Yellow background color */
+      border: none; /* Remove border */
+    }
+
+    /* Style form submit button on hover */
+    .btn-primary:hover {
+      background-color: #cc9900; /* Darker yellow on hover */
+    }
+
+    /* Animation for container disappearing */
+    .disappear {
+      animation: fogOut 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fogOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>MY Web Development Journey</h1>
+    <p>&copy; 2023 O'Loughlin Marketing Website</p>
+  </div>
+</header>
+
+<div class="main-content">
+  <section id="contact-form">
+    <h2>Contact Me</h2>
+    <form id="myForm" action="#" method="POST">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" required>
+      </div>
+      <div class="mb-3">
+        <label for="surname" class="form-label">Surname</label>
+        <input type="text" class="form-control" id="surname" name="surname" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+<script>
+  // JavaScript to handle form submission
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Apply the 'disappear' class to the contact form section
+    document.getElementById('contact-form').classList.add('disappear');
+  });
+</script>
+
+</body>
+</html>
+
